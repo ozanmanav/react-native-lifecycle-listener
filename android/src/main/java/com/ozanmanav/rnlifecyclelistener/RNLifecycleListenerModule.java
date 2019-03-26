@@ -29,20 +29,20 @@ public class RNLifecycleListenerModule extends ReactContextBaseJavaModule implem
   public void onHostResume() {
     getReactApplicationContext()
             .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-            .emit("onHostResume", null);
+            .emit("onResumeRN", null);
   }
 
   @Override
   public void onHostPause() {
     getReactApplicationContext()
             .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-            .emit("onHostPause", null);
+            .emit("onPauseRN", null);
   }
 
   @Override
   public void onHostDestroy() {
     getReactApplicationContext()
             .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-            .emit("onHostDestroy", null);
+            .emit("onDestroyRN", null);
   }
 }

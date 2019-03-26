@@ -2,21 +2,21 @@ module.exports = React => {
   const DeviceEventEmitter = React.DeviceEventEmitter;
 
   const _eventHandlers = {
-    onHostResume: new Set(),
-    onHostPause: new Set(),
-    onHostDestroy: new Set()
+    onResumeRN: new Set(),
+    onPauseRN: new Set(),
+    onDestroyRN: new Set()
   };
 
-  DeviceEventEmitter.addListener("onHostResume", () => {
-    _eventHandlers.onHostResume.forEach(fn => fn());
+  DeviceEventEmitter.addListener("onResumeRN", () => {
+    _eventHandlers.onResumeRN.forEach(fn => fn());
   });
 
-  DeviceEventEmitter.addListener("onHostPause", () => {
-    _eventHandlers.onHostPause.forEach(fn => fn());
+  DeviceEventEmitter.addListener("onPauseRN", () => {
+    _eventHandlers.onPauseRN.forEach(fn => fn());
   });
 
-  DeviceEventEmitter.addListener("onHostDestroy", () => {
-    _eventHandlers.onHostDestroy.forEach(fn => fn());
+  DeviceEventEmitter.addListener("onDestroyRN", () => {
+    _eventHandlers.onDestroyRN.forEach(fn => fn());
   });
 
   return {
