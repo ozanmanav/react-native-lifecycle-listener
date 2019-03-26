@@ -1,4 +1,3 @@
-
 # react-native-lifecycle-listener
 
 ## Getting started
@@ -11,7 +10,6 @@
 
 ### Manual installation
 
-
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
@@ -22,32 +20,32 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNLifecycleListenerPackage;` to the imports at the top of the file
-  - Add `new RNLifecycleListenerPackage()` to the list returned by the `getPackages()` method
+
+- Add `import com.reactlibrary.RNLifecycleListenerPackage;` to the imports at the top of the file
+- Add `new RNLifecycleListenerPackage()` to the list returned by the `getPackages()` method
+
 2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-lifecycle-listener'
-  	project(':react-native-lifecycle-listener').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-lifecycle-listener/android')
-  	```
+   ```
+   include ':react-native-lifecycle-listener'
+   project(':react-native-lifecycle-listener').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-lifecycle-listener/android')
+   ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-lifecycle-listener')
-  	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNLifecycleListener.sln` in `node_modules/react-native-lifecycle-listener/windows/RNLifecycleListener.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Lifecycle.Listener.RNLifecycleListener;` to the usings at the top of the file
-  - Add `new RNLifecycleListenerPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
+   ```
+     compile project(':react-native-lifecycle-listener')
+   ```
 
 ## Usage
-```javascript
-import RNLifecycleListener from 'react-native-lifecycle-listener';
 
-// TODO: What to do with the module?
-RNLifecycleListener;
+```javascript
+import RNLifecycleListener from "react-native-lifecycle-listener";
+
+RNLifecycleListener.addEventListener("onHostResume", () => {
+  console.log("App Resumed");
+});
+RNLifecycleListener.addEventListener("onHostPause", () => {
+  console.log("App Paused");
+});
+RNLifecycleListener.addEventListener("onHostDestroy", () => {
+  console.log("App Destroyed");
+});
 ```
-  
