@@ -39,13 +39,13 @@
 ```javascript
 import RNLifecycleListener from "react-native-lifecycle-listener";
 
-RNLifecycleListener.addEventListener("onHostResume", () => {
+RNLifecycleListener.addEventListener("onResumeRN", () => {
   console.log("App Resumed");
 });
-RNLifecycleListener.addEventListener("onHostPause", () => {
+RNLifecycleListener.addEventListener("onPauseRN", () => {
   console.log("App Paused");
 });
-RNLifecycleListener.addEventListener("onHostDestroy", () => {
+RNLifecycleListener.addEventListener("onDestroyRN", () => {
   console.log("App Destroyed");
 });
 ```
